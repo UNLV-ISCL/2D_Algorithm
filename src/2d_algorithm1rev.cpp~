@@ -59,7 +59,7 @@ void Planner::scanVal(const sensor_msgs::LaserScan::ConstPtr& laser){
 
     int count=0;                                      //init count
     float scale_safe_valley = 4;                      //scale the safe vector
-    float threshold =3.5f;                            //the obstacle distance that car still can avoid
+    float threshold =3.0f;                            //the obstacle distance that car still can avoid
     double vehicle_size=0.6;                          //width of vehicle in (m)
     
 

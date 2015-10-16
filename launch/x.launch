@@ -1,0 +1,34 @@
+<?xml version ="1.0"?>
+
+<launch>
+              
+
+		<node
+			pkg = "obstacle_avoidance"
+			type = "2d_algorithm1"
+			name = "algorithm_node"
+		        output="screen"				
+		/>
+
+		<node
+			pkg = "obstacle_avoidance"
+			type = "RCinput.py"
+			name= "RCinput"
+			output= "screen"
+			
+		/>
+
+		<node
+			pkg = "obstacle_avoidance"
+			type = "RCoutput.py"
+			name= "RCoutput"
+			output= "screen"
+			
+		/>
+
+	 	<include file="$(find mavros)/launch/apm.launch" />
+		
+
+		
+
+</launch>

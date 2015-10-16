@@ -1,0 +1,55 @@
+<?xml version ="1.0"?>
+
+<launch>
+              
+
+
+		<node
+			pkg = "hokuyo_node"
+			type = "hokuyo_node"
+			name = "hokuyo"
+			>
+			<param name = "port" value = "/dev/ttyACM0"/>
+			<param name = "min_ang" type="double" value="-2.09439510239319549227"/>
+			<param name="max_ang" type="double" value="2.09439510239319549227" />
+			<param name="intensity" value="false" />
+
+		</node>
+
+		<node
+			pkg = "joy"
+			type = "joy_node"
+			name = "joystick"
+			>
+			<param name = "dev" value = "/dev/input/js0"/>
+		</node>
+
+		<node
+			pkg = "obstacle_avoidance"
+			type = "2d_algorithm1"
+			name = "algorithm_node"
+		        output="screen"				
+		/>
+
+		<node
+			pkg = "obstacle_avoidance"
+			type = "Xboxinput.py"
+			name= "Xboxinput"
+			output= "screen"
+			
+		/>
+
+		<node
+			pkg = "obstacle_avoidance"
+			type = "RCoutput.py"
+			name= "RCoutput"
+			output= "screen"
+			
+		/>
+
+	 	<include file="$(find mavros)/launch/apm.launch" />
+		
+
+		
+
+</launch>
